@@ -4,7 +4,7 @@ services:
     env_file: .env
     image: mariadb:10.1
     volumes:
-    - ./dev/mysql:/var/lib/mysql
+    - ./.dev/mysql:/var/lib/mysql
   nginx:
     ports:
     - 127.0.0.1:80:80
