@@ -1,0 +1,17 @@
+version: '2'
+services:
+  mysql:
+    env_file: .env
+    image: mariadb:10.1
+    volumes:
+    - ./dev/mysql:/var/lib/mysql
+  nginx:
+    ports:
+    - 127.0.0.1:80:80
+    restart: 'no'
+  app:
+    depends_on:
+    - mysql
+    environment:
+    - ENV_MODE=dev
+    restart: 'no'

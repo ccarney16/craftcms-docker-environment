@@ -1,0 +1,12 @@
+#!/bin/sh
+
+##
+# composer - runs composer in a docker container with user id
+##
+
+docker run \
+--rm -ti \
+-v $(pwd):/data \
+-u $(id -u):$(id -g) \
+-w /data \
+composer ${@}

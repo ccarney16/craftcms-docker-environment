@@ -1,0 +1,12 @@
+#!/bin/sh
+
+##
+# npm - runs npm within a docker container
+##
+
+docker run \
+--rm -ti \
+-v $(pwd):/data \
+-w /data \
+-u $(id -u):$(id -g) \
+node:7.10-alpine npm ${@}

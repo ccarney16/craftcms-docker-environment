@@ -1,0 +1,7 @@
+#!/bin/sh
+
+##
+# craft-dev - Runs the craft command within the development environment
+##
+
+dev run --rm app php craft ${@}
